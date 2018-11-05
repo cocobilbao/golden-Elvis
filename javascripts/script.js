@@ -40,6 +40,11 @@ window.onload = function() {
 
     this.vx = 10;
 
+  // this.img.frames = 2;
+  // this.img.frameIndex = 0;
+
+
+
     this.img = new Image();
     this.img.src = "images/elvis-left.png";
 
@@ -51,28 +56,51 @@ window.onload = function() {
 
   Player.prototype.draw = function() {
     this.ctx.drawImage(this.img, this.x, this.y, 130, 160);
+      // this.img.frameIndex * Math.floor(this.img.width / this.img.frames),
+    // 0,
+    // Math.floor(this.img.width / this.img.frames),
+    // this.img.height,
+
+    // this.animateImg();
+
   };
+
+    // Player.prototype.animateImg = function() {
+  //   // se va cambiando el frame. Cuanto mayor es el módulo, mas lento se mueve el personaje
+  //   if (this.game.framesCounter % 6 === 0) {
+  //     this.img.frameIndex += 1;
+  
+  //     // Si el frame es el último, se vuelve al primero
+  //     if (this.img.frameIndex > 1) this.img.frameIndex = 0;
+  //   }
+  // };
+
+  // Sprite player
+
+0;
 
   Player.prototype.setListeners = function() {
     document.onkeydown = function(event) {
       if (event.keyCode === KEY_LEFT) {
         this.x -= 10;
-        this.vx -= 10;
+        this.vx -= 12;
       } else if (event.keyCode === KEY_RIGHT) {
         this.x += 10;
-        this.vx += 10;
+        this.vx += 12;
       }
     }.bind(this);
   };
 
   Player.prototype.move = function() {
-    if (this.x <= -5) {
-      this.x = 0;
+    if (this.x <= -45) {
+      this.x = 890;
     }
-    if (this.x >= 852) {
-      this.x = 847;
+    if (this.x >= 910) {
+      this.x = -35;
     }
   };
+
+
 
   // objetos que caen, principio.
 
@@ -81,7 +109,7 @@ window.onload = function() {
   function Record(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
     this.y = -40;
     this.width;
     this.height;
@@ -99,7 +127,7 @@ window.onload = function() {
   Record.prototype.move = function() {
     if (this.y > 700) {
       this.y = -40;
-      this.x = Math.floor(Math.random() * 955);
+      this.x = Math.floor(Math.random() * 920);
     }
 
     this.y += this.vy;
@@ -109,7 +137,7 @@ window.onload = function() {
   function Cake(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
     this.y = -80;
     this.width;
     this.height;
@@ -127,7 +155,7 @@ window.onload = function() {
   Cake.prototype.move = function() {
     if (this.y > 700) {
       this.y = -80;
-      this.x = Math.floor(Math.random() * 955);
+      this.x = Math.floor(Math.random() * 920);
     }
 
     this.y += this.vy;
@@ -138,7 +166,7 @@ window.onload = function() {
   function Pil(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
     this.y = -160;
     this.width;
     this.height;
@@ -156,7 +184,7 @@ window.onload = function() {
   Pil.prototype.move = function() {
     if (this.y > 700) {
       this.y = -180;
-      this.x = Math.floor(Math.random() * 955);
+      this.x = Math.floor(Math.random() * 920);
     }
 
     this.y += this.vy;
@@ -167,7 +195,7 @@ window.onload = function() {
   function Burger(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
     this.y = -160;
     this.width;
     this.height;
@@ -185,7 +213,7 @@ window.onload = function() {
   Burger.prototype.move = function() {
     if (this.y > 700) {
       this.y = -180;
-      this.x = Math.floor(Math.random() * 955);
+      this.x = Math.floor(Math.random() * 920);
     }
 
     this.y += this.vy;
@@ -196,7 +224,7 @@ window.onload = function() {
 function Cake2(canvas) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
-  this.x = Math.floor(Math.random() * 955);
+  this.x = Math.floor(Math.random() * 920);
   this.y = -280;
   this.width;
   this.height;
@@ -215,7 +243,7 @@ Cake2.prototype.draw = function() {
 Cake2.prototype.move = function() {
   if (this.y > 700) {
     this.y = -480;
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
   }
 
   this.y += this.vy;
@@ -226,7 +254,7 @@ Cake2.prototype.move = function() {
 function Pil2(canvas) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
-  this.x = Math.floor(Math.random() * 955);
+  this.x = Math.floor(Math.random() * 920);
   this.y = -160;
   this.width;
   this.height;
@@ -244,18 +272,18 @@ Pil2.prototype.draw = function() {
 Pil2.prototype.move = function() {
   if (this.y > 700) {
     this.y = -580;
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
   }
 
   this.y += this.vy;
 };
 
-// Hamburguesa
+// Pizza
 
-function Burger2(canvas) {
+function Pizza(canvas) {
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
-  this.x = Math.floor(Math.random() * 955);
+  this.x = Math.floor(Math.random() * 920);
   this.y = -160;
   this.width;
   this.height;
@@ -263,17 +291,17 @@ function Burger2(canvas) {
   this.vy = 0.4;
 
   this.img = new Image();
-  this.img.src = "images/burger.png";
+  this.img.src = "images/pizza.png";
 }
 
-Burger2.prototype.draw = function() {
+Pizza.prototype.draw = function() {
   this.ctx.drawImage(this.img, this.x, this.y, 70, 50);
 };
 
-Burger2.prototype.move = function() {
+Pizza.prototype.move = function() {
   if (this.y > 700) {
     this.y = -180;
-    this.x = Math.floor(Math.random() * 955);
+    this.x = Math.floor(Math.random() * 920);
   }
 
   this.y += this.vy;
@@ -293,7 +321,7 @@ Burger2.prototype.move = function() {
   var burger = new Burger(canvas);
   var cake2 = new Cake2(canvas);
   var pil2 = new Pil2(canvas);
-  var burger2 = new Burger2(canvas);
+  var pizza = new Pizza(canvas);
 
   function startGame() {
     setInterval(function() {
@@ -320,8 +348,8 @@ Burger2.prototype.move = function() {
       pil2.draw();
       pil2.move();
 
-      burger2.draw();
-      burger2.move();
+      pizza.draw();
+      pizza.move();
 
     }),
       1000 / 60;

@@ -66,11 +66,11 @@ window.onload = function() {
   };
 
     // Player.prototype.animateImg = function() {
-  //   // se va cambiando el frame. Cuanto mayor es el módulo, mas lento se mueve el personaje
+ 
   //   if (this.game.framesCounter % 6 === 0) {
   //     this.img.frameIndex += 1;
   
-  //     // Si el frame es el último, se vuelve al primero
+  
   //     if (this.img.frameIndex > 1) this.img.frameIndex = 0;
   //   }
   // };

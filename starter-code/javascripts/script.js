@@ -19,7 +19,7 @@ function Background(canvas) {
   this.y = 0;
 
   this.img = new Image();
-  this.img.src = "/images/painel-las-vegas-2-5x1-5m-paineis-sublimacao.jpg";
+  this.img.src = "images/painel-las-vegas-2-5x1-5m-paineis-sublimacao.jpg";
 
 }
 
@@ -49,7 +49,7 @@ function Player(canvas){
   this.vy = 3;
 
   this.img = new Image();
-  this.img.src="../images/elvis-body.png";
+  this.img.src="images/elvis-left.png";
 }
 
 Player.prototype.draw = function(){
@@ -68,7 +68,7 @@ Player.prototype.draw = function(){
 
 
   function startGame() {
-    console.log(background.draw);
+    console.log(player.draw);
     
 
       background.draw();

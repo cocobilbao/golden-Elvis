@@ -19,7 +19,7 @@ function Background(canvas) {
   this.y = 0;
 
   this.img = new Image();
-  this.img.src = "images/painel-las-vegas-2-5x1-5m-paineis-sublimacao.jpg";
+  this.img.src = "images/GracelandMansion.png";
 
 }
 
@@ -30,18 +30,13 @@ Background.prototype.draw = function() {
 
 }
 
-Background.prototype.ball = function() {
-
-  this.ctx.fillStyle = 'green'
-  this.ctx.fillRect(this.x, this.y, this.width-500, this.height-300);
-}
 
 function Player(canvas){
   
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
-  this.x = 500;
-  this.y = 0;
+  this.x = 450;
+  this.y = 430;
   this.width; 
   this.height;
 
@@ -50,13 +45,40 @@ function Player(canvas){
 
   this.img = new Image();
   this.img.src="images/elvis-left.png";
+  this.setListeners();
 }
+
+var KEY_RIGHT = 39;
+var KEY_LEFT = 37;
 
 Player.prototype.draw = function(){
 
-  this.ctx.drawImage(this.img, this.x, this.y, 80, 60)
+  this.ctx.drawImage(this.img, this.x, this.y, 130, 160)
 
 }
+
+
+
+Player.prototype.setListeners = function() {
+  document.onkeydown = function(event) {
+    if (event.keyCode === KEY_LEFT) {
+      this.x -= 5;
+      this.vx -= 10;
+    } else if (event.keyCode === KEY_RIGHT){
+      this.x += 5;
+      this.vx += 10;
+    }
+  }.bind(this);
+};
+
+Player.prototype.move=function(){
+ 
+  if(this.x <= 0){
+    this.x = 10;
+  } if (this.x >= 590 ){
+    this.x = 580;
+  }
+  }
 
   var canvas = document.getElementById("game");
   var ctx = canvas.getContext("2d");
@@ -68,15 +90,16 @@ Player.prototype.draw = function(){
 
 
   function startGame() {
-    console.log(player.draw);
-    
+    setInterval (function(){
 
       background.draw();
-      background.ball();
+
       player.draw();
-  
-    
-  }
+      player.move();
+      
+
+
+    } ), 1000/60  }
 
   
 };

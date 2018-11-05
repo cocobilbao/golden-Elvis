@@ -41,8 +41,8 @@ function Player(canvas){
   this.width; 
   this.height;
 
-  this.vx = 3;
-  this.vy = 3;
+  this.vx = 10;
+ 
 
   
 
@@ -70,10 +70,10 @@ Player.prototype.draw = function(){
 Player.prototype.setListeners = function() {
   document.onkeydown = function(event) {
     if (event.keyCode === KEY_LEFT) {
-      this.x -= 5;
+      this.x -= 10;
       this.vx -= 10;
     } else if (event.keyCode === KEY_RIGHT){
-      this.x += 5;
+      this.x += 10;
       this.vx += 10;
     }
   }.bind(this);
@@ -94,12 +94,12 @@ function Things(canvas) {
 
   this.canvas = canvas;
   this.ctx = this.canvas.getContext("2d");
-  this.x = 500;
-  this.y = 0;
+  this.x = Math.floor(Math.random()*975);
+  this.y = -20;
   this.width; 
   this.height;
 
-  this.vy = 0.5;
+  this.vy = 0.4;
 
   this.img = new Image();
   this.img.src="images/disco.png";
@@ -114,7 +114,11 @@ Things.prototype.draw = function(){
 
  
 Things.prototype.move= function(){
- 
+  if(this.y > 700){
+    this.y = -20;
+    this.x = Math.floor(Math.random()*975);
+  }
+
   this.y += this.vy;
 
     }

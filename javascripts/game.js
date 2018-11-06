@@ -10,12 +10,12 @@ window.onload = function() {
     this.background = new Background(this.canvas);
     this.player = new Player(this.canvas);
     this.record = new Record(this);
-    this.cake = new Cake(this.canvas);
-    this.pil = new Pil(this.canvas);
-    this.burger = new Burger(this.canvas);
-    this.cake2 = new Cake2(this.canvas);
-    this.pil2 = new Pil2(this.canvas);
-    this.pizza = new Pizza(this.canvas);
+    this.cake = new Cake(this);
+    this.pill = new Pill(this);
+    this.burger = new Burger(this);
+    this.cake2 = new Cake2(this);
+    this.pill2 = new Pill2(this);
+    this.pizza = new Pizza(this);
     this.score = new Score(this.canvas);
 }
 
@@ -32,8 +32,8 @@ window.onload = function() {
       this.cake.draw();
       this.cake.move();
 
-      this.pil.draw();
-      this.pil.move();
+      this.pill.draw();
+      this.pill.move();
 
       this.burger.draw();
       this.burger.move();
@@ -41,13 +41,19 @@ window.onload = function() {
       this.cake2.draw();
       this.cake2.move();
 
-      this.pil2.draw();
-      this.pil2.move();
+      this.pill2.draw();
+      this.pill2.move();
 
       this.pizza.draw();
       this.pizza.move();
 
       this.record.collision();
+      this.cake.collision();
+      this.pill.collision();
+      this.pill2.collision();
+      this.burger.collision();
+      this.cake2.collision();
+      this.pizza.collision();
 
       this.score.draw();
 

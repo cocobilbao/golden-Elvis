@@ -282,6 +282,8 @@ Pizza.prototype.move = function() {
 Pizza.prototype.collision = function(){
   if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
       
+    this.player.img = this.player.img2;
+
       this.y = -160;
       this.x = (Math.floor(Math.random() * 900));  
  }      

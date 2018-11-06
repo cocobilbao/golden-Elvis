@@ -13,4 +13,5 @@ Score.prototype.draw = function() {
     this.ctx.font = "40px roboto";
     this.ctx.fillStyle = "yellow";
     this.ctx.fillText(Math.floor(this.score), 20, 50);
+    
   }

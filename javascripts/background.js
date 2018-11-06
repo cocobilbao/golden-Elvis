@@ -1,4 +1,4 @@
-function Background(canvas) {
+  function Background(canvas) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
     this.width = this.canvas.width;

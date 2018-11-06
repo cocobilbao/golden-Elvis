@@ -1,58 +1,57 @@
 window.onload = function() {
   document.getElementById("start-button").onclick = function() {
-    startGame();
+    var game = new Game("game")
+    game.startGame();
   };
 
   function Game(id) {
     this.canvas = document.getElementById(id);
     this.ctx = this.canvas.getContext("2d");
-  }
+    this.background = new Background(this.canvas);
+    this.player = new Player(this.canvas);
+    this.record = new Record(this);
+    this.cake = new Cake(this.canvas);
+    this.pil = new Pil(this.canvas);
+    this.burger = new Burger(this.canvas);
+    this.cake2 = new Cake2(this.canvas);
+    this.pil2 = new Pil2(this.canvas);
+    this.pizza = new Pizza(this.canvas);
+    this.score = new Score(this.canvas);
+}
 
-
-
-  var canvas = document.getElementById("game");
-  var ctx = canvas.getContext("2d");
-  var background = new Background(canvas);
-  var player = new Player(canvas);
-  var record = new Record(canvas);
-  var cake = new Cake(canvas);
-  var pil = new Pil(canvas);
-  var burger = new Burger(canvas);
-  var cake2 = new Cake2(canvas);
-  var pil2 = new Pil2(canvas);
-  var pizza = new Pizza(canvas);
-
-  function startGame() {
+  Game.prototype.startGame = function() {
     setInterval(function() {
-      background.draw();
+      this.background.draw();
       
-      player.draw();
-      player.move();
+      this.player.draw();
+      this.player.move();
 
-      record.draw();
-      record.move();
+      this.record.draw();
+      this.record.move();
 
-      cake.draw();
-      cake.move();
+      this.cake.draw();
+      this.cake.move();
 
-      pil.draw();
-      pil.move();
+      this.pil.draw();
+      this.pil.move();
 
-      burger.draw();
-      burger.move();
+      this.burger.draw();
+      this.burger.move();
 
-      cake2.draw();
-      cake2.move();
+      this.cake2.draw();
+      this.cake2.move();
 
-      pil2.draw();
-      pil2.move();
+      this.pil2.draw();
+      this.pil2.move();
 
-      pizza.draw();
-      pizza.move();
+      this.pizza.draw();
+      this.pizza.move();
 
-      record.collision();
+      this.record.collision();
 
-    }),
+      this.score.draw();
+
+    }.bind(this)),
       1000 / 60;
   }
 

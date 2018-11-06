@@ -1,11 +1,13 @@
 //Disco
 
-function Record(canvas) {
-    this.canvas = canvas;
+function Record(game) {
+  this.game = game
+    this.canvas = this.game.canvas;
     this.ctx = this.canvas.getContext("2d");
+    this.player = this.game.player
     this.x = Math.floor(Math.random() * 900
     );
-    this.y = -40;
+    this.y = -80;
     this.width = 80;
     this.height = 80;
 
@@ -31,14 +33,15 @@ function Record(canvas) {
 
    // (p.x + p.w > o.x && o.x + o.w > p.x && p.y + p.h > o.y && o.y + o.h > p.y )
   Record.prototype.collision = function(){
-
-    if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.player.y + this.player.height > this.y + this.height > this.player.y){
-    
-      this.y = -40;
-  }
-
- 
-};
+   //debugger
+    if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
+      
+       this.y = -80;
+       this.x = (Math.floor(Math.random() * 900));
+      
+  } 
+       
+}
   
 
 //Tarta

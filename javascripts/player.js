@@ -3,8 +3,8 @@ function Player(canvas) {
   this.ctx = this.canvas.getContext("2d");
   this.x = 450;
   this.y = 430;
-  this.width;
-  this.height;
+  this.width = 130;
+  this.height = 160;
 
   this.vx = 10;
 
@@ -23,7 +23,7 @@ var KEY_RIGHT = 39;
 var KEY_LEFT = 37;
 
 Player.prototype.draw = function() {
-  this.ctx.drawImage(this.img, this.x, this.y, 130, 160);
+  this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     // this.img.frameIndex * Math.floor(this.img.width / this.img.frames),
   // 0,
   // Math.floor(this.img.width / this.img.frames),

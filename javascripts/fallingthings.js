@@ -6,8 +6,8 @@ function Record(canvas) {
     this.x = Math.floor(Math.random() * 900
     );
     this.y = -40;
-    this.width;
-    this.height;
+    this.width = 80;
+    this.height = 80;
 
     this.vy = 0.3;
 
@@ -16,7 +16,7 @@ function Record(canvas) {
   }
 
   Record.prototype.draw = function() {
-    this.ctx.drawImage(this.img, this.x, this.y, 80, 80);
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   };
 
   Record.prototype.move = function() {
@@ -28,6 +28,19 @@ function Record(canvas) {
 
     this.y += this.vy;
   };
+
+   // (p.x + p.w > o.x && o.x + o.w > p.x && p.y + p.h > o.y && o.y + o.h > p.y )
+  Record.prototype.collision = function(){
+
+    if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.player.y + this.player.height > this.y + this.height > this.player.y){
+    
+      this.y = -40;
+  }
+
+ 
+};
+  
+
 //Tarta
 
   function Cake(canvas) {
@@ -36,17 +49,17 @@ function Record(canvas) {
     this.x = Math.floor(Math.random() * 900
     );
     this.y = -80;
-    this.width;
-    this.height;
+    this.width = 60;
+    this.height = 60;
 
-    this.vy = 0.5;
+    this.vy = 0.55;
 
     this.img = new Image();
     this.img.src = "images/cheesecake.png";
   }
 
   Cake.prototype.draw = function() {
-    this.ctx.drawImage(this.img, this.x, this.y, 60, 60);
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   };
 
   Cake.prototype.move = function() {
@@ -59,6 +72,8 @@ function Record(canvas) {
     this.y += this.vy;
   };
 
+ 
+
 // Pirula
 
   function Pil(canvas) {
@@ -67,17 +82,17 @@ function Record(canvas) {
     this.x = Math.floor(Math.random() * 900
     );
     this.y = -160;
-    this.width;
-    this.height;
+    this.width = 60;
+    this.height = 60;
 
-    this.vy = 0.4;
+    this.vy = 0.45;
 
     this.img = new Image();
     this.img.src = "images/pil.png";
   }
 
   Pil.prototype.draw = function() {
-    this.ctx.drawImage(this.img, this.x, this.y, 60, 60);
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   };
 
   Pil.prototype.move = function() {
@@ -98,17 +113,17 @@ function Record(canvas) {
     this.x = Math.floor(Math.random() * 900
     );
     this.y = -160;
-    this.width;
-    this.height;
+    this.width = 70;
+    this.height = 50;
 
-    this.vy = 0.6;
+    this.vy = 0.65;
 
     this.img = new Image();
     this.img.src = "images/burger.png";
   }
 
   Burger.prototype.draw = function() {
-    this.ctx.drawImage(this.img, this.x, this.y, 70, 50);
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   };
 
   Burger.prototype.move = function() {
@@ -129,8 +144,8 @@ function Cake2(canvas) {
   this.x = Math.floor(Math.random() * 900
   );
   this.y = -280;
-  this.width;
-  this.height;
+  this.width = 60;
+  this.height = 60;
 
   this.vy = 0.4;
 
@@ -139,7 +154,7 @@ function Cake2(canvas) {
 }
 
 Cake2.prototype.draw = function() {
-  this.ctx.drawImage(this.img, this.x, this.y, 60, 60);
+  this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
   this.ctx.rotate(-this.angle + Math.PI/2.0);
 };
 
@@ -161,8 +176,8 @@ function Pil2(canvas) {
   this.x = Math.floor(Math.random() * 900
   );
   this.y = -160;
-  this.width;
-  this.height;
+  this.width = 60;
+  this.height = 60;
 
   this.vy = 0.5;
 
@@ -171,7 +186,7 @@ function Pil2(canvas) {
 }
 
 Pil2.prototype.draw = function() {
-  this.ctx.drawImage(this.img, this.x, this.y, 60, 60);
+  this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
 
 Pil2.prototype.move = function() {
@@ -192,17 +207,17 @@ function Pizza(canvas) {
   this.x = Math.floor(Math.random() * 900
   );
   this.y = -160;
-  this.width;
-  this.height;
+  this.width = 70;
+  this.height = 50;
 
-  this.vy = 0.4;
+  this.vy = 0.35;
 
   this.img = new Image();
   this.img.src = "images/pizza.png";
-}
+};
 
 Pizza.prototype.draw = function() {
-  this.ctx.drawImage(this.img, this.x, this.y, 70, 50);
+  this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
 };
 
 Pizza.prototype.move = function() {

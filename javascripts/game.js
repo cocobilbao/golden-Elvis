@@ -3,7 +3,7 @@ window.onload = function() {
     startGame();
   };
 
-  function Canvas(id) {
+  function Game(id) {
     this.canvas = document.getElementById(id);
     this.ctx = this.canvas.getContext("2d");
   }
@@ -25,7 +25,7 @@ window.onload = function() {
   function startGame() {
     setInterval(function() {
       background.draw();
-
+      
       player.draw();
       player.move();
 
@@ -49,6 +49,8 @@ window.onload = function() {
 
       pizza.draw();
       pizza.move();
+
+      record.collision();
 
     }),
       1000 / 60;

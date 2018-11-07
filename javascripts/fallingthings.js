@@ -75,7 +75,8 @@ function Record(game) {
   Cake.prototype.collision = function(){
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
-      this.player.img = this.player.img2;
+      this.player.img = this.player.img3;
+     
         this.y = -80;
         this.x = (Math.floor(Math.random() * 900));  
    }      
@@ -117,7 +118,7 @@ function Record(game) {
   Pill.prototype.collision = function(){
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
-      this.player.img = this.player.img2;
+      this.player.img = this.player.img3;
         this.y = -160;
         this.x = (Math.floor(Math.random() * 900));  
    }      
@@ -136,7 +137,7 @@ function Record(game) {
     this.width = 70;
     this.height = 50;
 
-    this.vy = 0.55;
+    this.vy = 0.50;
 
     this.img = new Image();
     this.img.src = "images/burger.png";
@@ -159,7 +160,7 @@ function Record(game) {
   Burger.prototype.collision = function(){
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
-      this.player.img = this.player.img2;
+      this.player.img = this.player.img3;
       
         this.y = -180;
         this.x = (Math.floor(Math.random() * 900));  
@@ -203,7 +204,7 @@ Cake2.prototype.move = function() {
   Cake2.prototype.collision = function(){
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
-      this.player.img = this.player.img2;
+      this.player.img = this.player.img3;
         this.y = -180;
         this.x = (Math.floor(Math.random() * 900));  
    }      
@@ -244,7 +245,7 @@ Pill2.prototype.move = function() {
 Pill2.prototype.collision = function(){
   if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
     
-    this.player.img = this.player.img2;
+    this.player.img = this.player.img3;
 
       this.y = -160;
       this.x = (Math.floor(Math.random() * 900));  
@@ -289,8 +290,8 @@ Pizza.prototype.move = function() {
 Pizza.prototype.collision = function(){
   if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
       
-      this.player.img = this.player.img2;
-      this.game.interval
+      this.player.img = this.player.img3;
+     
 
       this.y = -160;
       this.x = (Math.floor(Math.random() * 900));  

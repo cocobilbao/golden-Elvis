@@ -20,6 +20,6 @@ Score.prototype.draw = function() {
   }
 
 Score.prototype.record = function() {
-    this.ctx.drawImage(this.img, 15, 15, 40, 40);
+    this.ctx.drawImage(this.img, 10, 10, 40, 40);
 }
 

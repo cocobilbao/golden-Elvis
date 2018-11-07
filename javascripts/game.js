@@ -63,12 +63,14 @@ window.onload = function() {
     }.bind(this)),
       1000 / 60;
   }
-
+};
 
   Game.prototype.stop = function() {
     clearInterval(this.interval);
   };
 
+  Game.prototype.gameOver = function() {
+    this.stop();
+  };
 
-};
 

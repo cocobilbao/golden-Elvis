@@ -76,7 +76,7 @@ function Record(game) {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-     
+     this.game.startGame.interval
         this.y = -80;
         this.x = (Math.floor(Math.random() * 900));  
    }      
@@ -152,6 +152,7 @@ function Record(game) {
       this.y = -180;
       this.x = Math.floor(Math.random() * 900
       );
+      
     }
 
     this.y += this.vy;
@@ -161,7 +162,7 @@ function Record(game) {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-      
+      this.interval
         this.y = -180;
         this.x = (Math.floor(Math.random() * 900));  
    }      

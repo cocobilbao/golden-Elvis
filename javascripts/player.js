@@ -25,11 +25,7 @@ var KEY_LEFT = 37;
 
 Player.prototype.draw = function() {
   this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-
-
 };
-
-
 
 
 Player.prototype.setListeners = function() {
@@ -54,3 +50,4 @@ Player.prototype.move = function() {
     this.x = -35;
   }
 };
+

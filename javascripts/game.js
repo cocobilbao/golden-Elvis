@@ -17,6 +17,8 @@ window.onload = function() {
     this.pill2 = new Pill2(this);
     this.pizza = new Pizza(this);
     this.score = new Score(this.canvas);
+
+    
   
 }
 
@@ -65,12 +67,21 @@ window.onload = function() {
   }
 };
 
-  Game.prototype.stop = function() {
-    clearInterval(this.interval);
-  };
+Game.prototype.stop = function() {
+  clearInterval(this.interval);
+};
 
-  Game.prototype.gameOver = function() {
-    this.stop();
-  };
+Game.prototype.gameOver = function() {
+  this.stop();
+  
+  if(confirm("Elvis is dead... again")) {
+    this.reset();
+    this.start();
+  }
+};
+
+Game.prototype.reset = function() {
+ 
+};
 
 

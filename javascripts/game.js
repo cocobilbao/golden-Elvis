@@ -17,10 +17,11 @@ window.onload = function() {
     this.pill2 = new Pill2(this);
     this.pizza = new Pizza(this);
     this.score = new Score(this.canvas);
+  
 }
 
   Game.prototype.startGame = function() {
-    setInterval(function() {
+    this.interval = setInterval(function() {
       this.background.draw();
       
       this.player.draw();
@@ -64,10 +65,10 @@ window.onload = function() {
   }
 
 
+  Game.prototype.stop = function() {
+    clearInterval(this.interval);
+  };
 
 
 };
 
-Game.prototype.stop = function() {
-  clearInterval(this.interval);
-};

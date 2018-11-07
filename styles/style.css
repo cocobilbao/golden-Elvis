@@ -6,7 +6,7 @@ body {
 body img {
  position: absolute;
  left: 10px;
- top: 20px;
+ top: 25px;
 }
 
 body h1 {
@@ -42,4 +42,23 @@ body button {
   right: 15px;
   bottom: 20px;
 
+}
+
+h2 {
+  font-size: 3.8em;
+	font-weight: 400;
+	color: #DEC300;
+}
+
+.luxe {
+  text-shadow: #FFF572 0 -2px 0,
+							 #D59F02 1px -3px 1px,
+               #B58800 2px 1px 0,
+               #5B3900 0 -1px 2px,
+               #5B3900 1px 1px 1px,
+               #322500 1px 3px 4px;
+  position: absolute;
+  left: 10px;
+  bottom: 215px;
+  text-align: center;
 }

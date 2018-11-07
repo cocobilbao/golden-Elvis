@@ -16,6 +16,7 @@ function Player(canvas) {
   this.img = new Image();
   this.img.src = "images/elvis-left.png";
 
+
   this.img2 = new Image();
   this.img2.src = "images/grave.png";
 

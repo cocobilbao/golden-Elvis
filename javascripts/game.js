@@ -56,6 +56,8 @@ window.onload = function() {
       this.pizza.collision();
 
       this.score.draw();
+      this.score.record();
+      
 
     }.bind(this)),
       1000 / 60;
@@ -63,4 +65,9 @@ window.onload = function() {
 
 
 
+
+};
+
+Game.prototype.stop = function() {
+  clearInterval(this.interval);
 };

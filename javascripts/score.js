@@ -6,12 +6,20 @@ function Score(canvas) {
     this.width = 150;
     this.height = 150;
     this.score = 0;
+
+    this.img = new Image();
+    this.img.src = "images/disco.png";
 }
 
 
 Score.prototype.draw = function() {
-    this.ctx.font = "40px roboto";
+    this.ctx.font = "45px roboto";
     this.ctx.fillStyle = "yellow";
-    this.ctx.fillText(Math.floor(this.score), 20, 50);
+    this.ctx.fillText(Math.floor(this.score), 70, 50);
     
   }
+
+Score.prototype.record = function() {
+    this.ctx.drawImage(this.img, 15, 15, 40, 40);
+}
+

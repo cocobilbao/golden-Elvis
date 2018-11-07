@@ -33,7 +33,7 @@ function Record(game) {
   
   Record.prototype.collision = function(){
    if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
-      this.score ++;
+      this.game.score.score ++;
       this.y = -80;
        this.x = (Math.floor(Math.random() * 900));  
   }      

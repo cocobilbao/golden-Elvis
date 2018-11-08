@@ -18,7 +18,7 @@ window.onload = function() {
     this.pizza = new Pizza(this);
     this.score = new Score(this.canvas);
 
-    // this.music = new Music(this.canvas);
+    this.music = new Music(this.canvas);
     
 
     
@@ -26,6 +26,7 @@ window.onload = function() {
 }
 
   Game.prototype.startGame = function() {
+    this.music.play();
     this.interval = setInterval(function() {
       this.background.draw();
       
@@ -64,7 +65,7 @@ window.onload = function() {
       this.score.draw();
       this.score.record();
 
-      // this.music.play();
+      
 
 
       

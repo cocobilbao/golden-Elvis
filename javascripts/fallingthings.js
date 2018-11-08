@@ -77,8 +77,9 @@ function Record(game) {
         
       this.player.img = this.player.img3;
      clearInterval(this.game.interval);
-        this.y = -80;
-        this.x = (Math.floor(Math.random() * 900));  
+     this.player.draw()
+        // this.y = -80;
+        // this.x = (Math.floor(Math.random() * 900));  
    }      
  }
  
@@ -119,8 +120,9 @@ function Record(game) {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-        this.y = -160;
-        this.x = (Math.floor(Math.random() * 900));  
+      clearInterval(this.game.interval); 
+        // this.y = -160;
+        // this.x = (Math.floor(Math.random() * 900));  
    }      
  }
 
@@ -162,9 +164,9 @@ function Record(game) {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-      this.interval
-        this.y = -180;
-        this.x = (Math.floor(Math.random() * 900));  
+      clearInterval(this.game.interval);
+        // this.y = -180;
+        // this.x = (Math.floor(Math.random() * 900));  
    }      
  }
 
@@ -206,8 +208,9 @@ Cake2.prototype.move = function() {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-        this.y = -180;
-        this.x = (Math.floor(Math.random() * 900));  
+      clearInterval(this.game.interval);
+        // this.y = -180;
+        // this.x = (Math.floor(Math.random() * 900));  
    }      
  }
 
@@ -247,9 +250,9 @@ Pill2.prototype.collision = function(){
   if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
     
     this.player.img = this.player.img3;
-
-      this.y = -160;
-      this.x = (Math.floor(Math.random() * 900));  
+    clearInterval(this.game.interval);
+      // this.y = -160;
+      // this.x = (Math.floor(Math.random() * 900));  
  }      
 }
 
@@ -292,10 +295,10 @@ Pizza.prototype.collision = function(){
   if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
       
       this.player.img = this.player.img3;
-     
+      clearInterval(this.game.interval);
 
-      this.y = -160;
-      this.x = (Math.floor(Math.random() * 900));  
+      // this.y = -160;
+      // this.x = (Math.floor(Math.random() * 900));  
 
  }      
 }

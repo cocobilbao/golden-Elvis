@@ -19,3 +19,18 @@
       this.canvas.height
     );
   };
+
+  function Music(canvas) {
+    this.canvas = canvas;
+    this.ctx = this.canvas.getContext("2d");
+
+    this.sound = new Sound();
+    this.sound.src = "audio/Elvis Presley - Burning Love.mp3";
+  }
+
+  Music.prototype.play = function() {
+    this.ctx.playMusic(
+      this.sound
+    );
+    
+  };

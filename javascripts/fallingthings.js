@@ -76,7 +76,7 @@ function Record(game) {
     if (this.player.x + this.player.width > this.x && this.x + this.width > this.player.x && this.y + this.height > this.player.y){
         
       this.player.img = this.player.img3;
-     this.game.startGame.interval
+     clearInterval(this.game.interval);
         this.y = -80;
         this.x = (Math.floor(Math.random() * 900));  
    }      

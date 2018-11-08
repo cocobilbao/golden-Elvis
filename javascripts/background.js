@@ -30,5 +30,7 @@
 
   Music.prototype.play = function() {
    this.sound.play()
+   this.sound.loop = true;
     
   };
+

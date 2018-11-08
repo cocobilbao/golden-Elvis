@@ -6,14 +6,11 @@ function Player(canvas) {
   this.width = 130;
   this.height = 160;
 
-  this.vx = 10;
-
-
+  this.vx = 10
 
   this.img = new Image();
   this.img.src = "images/elvis-left.png";
 
- 
   this.img3 = new Image();
   this.img3.src = "images/grave.png";
 

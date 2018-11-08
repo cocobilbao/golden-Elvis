@@ -11,12 +11,10 @@ function Score(canvas) {
     this.img.src = "images/disco.png";
 }
 
-
 Score.prototype.draw = function() {
     this.ctx.font = "45px roboto";
     this.ctx.fillStyle = "yellow";
     this.ctx.fillText(Math.floor(this.score), 70, 50);
-    
   }
 
 Score.prototype.record = function() {

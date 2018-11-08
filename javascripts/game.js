@@ -16,17 +16,15 @@ window.onload = function() {
     this.cake2 = new Cake2(this);
     this.pill2 = new Pill2(this);
     this.pizza = new Pizza(this);
+    this.pizza2 = new Pizza2(this);
     this.score = new Score(this.canvas);
 
     this.music = new Music(this.canvas);
     
-
-    
-  
 }
 
   Game.prototype.startGame = function() {
-    this.music.play();
+     
     this.interval = setInterval(function() {
       this.background.draw();
       
@@ -54,6 +52,9 @@ window.onload = function() {
       this.pizza.draw();
       this.pizza.move();
 
+      this.pizza2.draw();
+      this.pizza2.move();
+
       this.record.collision();
       this.cake.collision();
       this.pill.collision();
@@ -61,23 +62,19 @@ window.onload = function() {
       this.burger.collision();
       this.cake2.collision();
       this.pizza.collision();
+      this.pizza2.collision();
 
       this.score.draw();
       this.score.record();
-
       
-
-
-      
+      this.music.play();
 
     }.bind(this)),
       1000 / 60;
   }
 };
 
-Game.prototype.stop = function() {
-  clearInterval(this.interval);
-};
+
 
 
 

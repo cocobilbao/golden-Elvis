@@ -63,7 +63,7 @@ h2 {
   text-align: center;
 }
 
-/* .luxe2 {
+.luxe2 {
   text-shadow: rgb(216, 19, 5) 0 -2px 0,
 							 rgb(126, 4, 10) 1px -3px 1px,
                rgb(51, 3, 3) 2px 1px 0,
@@ -71,8 +71,10 @@ h2 {
                rgb(63, 11, 4) 1px 1px 1px,
                #140101 1px 3px 4px;
   position: absolute;
-  left: 500px;
-  bottom: 200px;
+  left: 310px;
+  bottom: 80px;
   text-align: center;
-  font-size: 6em;
-} */
+  font-size: 4em;
+  color: #fc0804
+}
+

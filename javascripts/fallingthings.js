@@ -70,9 +70,9 @@ Cake.prototype.move = function() {
 
 Cake.prototype.collision = function() {
   if (
-    this.player.x -5 + this.player.width > this.x - 10 &&
-    this.x - 10 + this.width > this.player.x - 5 &&
-    this.y - 10 + this.height > this.player.y - 5
+    this.player.x -10 + this.player.width > this.x - 15 &&
+    this.x - 15 + this.width > this.player.x - 10 &&
+    this.y - 15 + this.height > this.player.y - 10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
@@ -112,9 +112,9 @@ Pill.prototype.move = function() {
 
 Pill.prototype.collision = function() {
   if (
-    this.player.x - 10 + this.player.width > this.x - 5 &&
-    this.x - 5 + this.width > this.player.x -10 &&
-    this.y - 10 + this.height > this.player.y 
+    this.player.x - 10 + this.player.width > this.x - 15 &&
+    this.x - 15 + this.width > this.player.x -10 &&
+    this.y - 15 + this.height > this.player.y -10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
@@ -154,9 +154,9 @@ Burger.prototype.move = function() {
 
 Burger.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x -5 &&
-    this.x -5 + this.width > this.player.x &&
-    this.y -10 + this.height > this.player.y -5
+    this.player.x - 10 + this.player.width > this.x -15 &&
+    this.x -15 + this.width > this.player.x -10 &&
+    this.y -15 + this.height > this.player.y -10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
@@ -197,8 +197,8 @@ Cake2.prototype.move = function() {
 
 Cake2.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x -5 &&
-    this.x -5 + this.width > this.player.x &&
+    this.player.x -10 + this.player.width > this.x -10 &&
+    this.x -10 + this.width > this.player.x &&
     this.y - 10 + this.height > this.player.y - 10
   ) {
     this.player.img = this.player.img3;
@@ -239,9 +239,9 @@ Pill2.prototype.move = function() {
 
 Pill2.prototype.collision = function() {
   if (
-    this.player.x - 10 + this.player.width > this.x - 5 &&
-    this.x - 5 + this.width > this.player.x -10 &&
-    this.y - 10 + this.height > this.player.y 
+    this.player.x - 10 + this.player.width > this.x - 15 &&
+    this.x - 15 + this.width > this.player.x -10 &&
+    this.y - 15 + this.height > this.player.y -10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
@@ -281,9 +281,9 @@ Pizza.prototype.move = function() {
 
 Pizza.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x -5 &&
-    this.x - 5 + this.width > this.player.x &&
-    this.y - 15 + this.height > this.player.y
+    this.player.x - 10 + this.player.width > this.x -15 &&
+    this.x - 15 + this.width > this.player.x &&
+    this.y - 15 + this.height > this.player.y -10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
@@ -323,9 +323,9 @@ Pizza2.prototype.move = function() {
 
 Pizza2.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x - 5 &&
-    this.x - 5 + this.width > this.player.x &&
-    this.y - 15 + this.height > this.player.y
+    this.player.x -10 + this.player.width > this.x - 15 &&
+    this.x - 15 + this.width > this.player.x &&
+    this.y - 15 + this.height > this.player.y -10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);

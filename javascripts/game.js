@@ -24,7 +24,7 @@ window.onload = function() {
 }
 
   Game.prototype.startGame = function() {
-     
+     this.music.play();
     this.interval = setInterval(function() {
       this.background.draw();
       
@@ -67,7 +67,8 @@ window.onload = function() {
       this.score.draw();
       this.score.record();
       
-      this.music.play();
+      
+    
 
     }.bind(this)),
       1000 / 60;

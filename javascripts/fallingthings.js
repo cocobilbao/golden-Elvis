@@ -49,7 +49,7 @@ function Cake(game) {
   this.width = 60;
   this.height = 60;
 
-  this.vy = 0.50;
+  this.vy = 0.45;
 
   this.img = new Image();
   this.img.src = "images/cheesecake.png";
@@ -70,13 +70,14 @@ Cake.prototype.move = function() {
 
 Cake.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x -5 + this.player.width > this.x - 10 &&
+    this.x - 10 + this.width > this.player.x - 5 &&
+    this.y - 10 + this.height > this.player.y - 5
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
     this.player.draw();
+    this.game.music.pause();   
   }
 };
 
@@ -90,7 +91,7 @@ function Pill(game) {
   this.width = 60;
   this.height = 60;
 
-  this.vy = 0.40;
+  this.vy = 0.35;
 
   this.img = new Image();
   this.img.src = "images/pill.png";
@@ -111,13 +112,14 @@ Pill.prototype.move = function() {
 
 Pill.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x - 10 + this.player.width > this.x - 5 &&
+    this.x - 5 + this.width > this.player.x -10 &&
+    this.y - 10 + this.height > this.player.y 
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
     this.player.draw();
+    this.game.music.pause();   
   }
 };
 
@@ -131,7 +133,7 @@ function Burger(game) {
   this.width = 70;
   this.height = 50;
 
-  this.vy = 0.55;
+  this.vy = 0.50;
 
   this.img = new Image();
   this.img.src = "images/burger.png";
@@ -152,13 +154,14 @@ Burger.prototype.move = function() {
 
 Burger.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x + this.player.width > this.x -5 &&
+    this.x -5 + this.width > this.player.x &&
+    this.y -10 + this.height > this.player.y -5
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
     this.player.draw();
+    this.game.music.pause();    
   }
 };
 
@@ -172,7 +175,7 @@ function Cake2(game) {
   this.width = 60;
   this.height = 60;
 
-  this.vy = 0.45;
+  this.vy = 0.40;
 
   this.img = new Image();
   this.img.src = "images/cheesecake2.png";
@@ -194,13 +197,14 @@ Cake2.prototype.move = function() {
 
 Cake2.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x + this.player.width > this.x -5 &&
+    this.x -5 + this.width > this.player.x &&
+    this.y - 10 + this.height > this.player.y - 10
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
     this.player.draw();
+    this.game.music.pause();  
   }
 };
 
@@ -235,13 +239,14 @@ Pill2.prototype.move = function() {
 
 Pill2.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x - 10 + this.player.width > this.x - 5 &&
+    this.x - 5 + this.width > this.player.x -10 &&
+    this.y - 10 + this.height > this.player.y 
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
     this.player.draw();
+    this.game.music.pause();  
   }
 };
 
@@ -276,14 +281,14 @@ Pizza.prototype.move = function() {
 
 Pizza.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x + this.player.width > this.x -5 &&
+    this.x - 5 + this.width > this.player.x &&
+    this.y - 15 + this.height > this.player.y
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
-
     this.player.draw();
+    this.game.music.pause();  
   }
 };
 
@@ -297,7 +302,7 @@ function Pizza2(game) {
   this.width = 70;
   this.height = 50;
 
-  this.vy = 0.45;
+  this.vy = 0.50;
 
   this.img = new Image();
   this.img.src = "images/pizza2.png";
@@ -318,14 +323,14 @@ Pizza2.prototype.move = function() {
 
 Pizza2.prototype.collision = function() {
   if (
-    this.player.x + this.player.width > this.x &&
-    this.x + this.width > this.player.x &&
-    this.y + this.height > this.player.y
+    this.player.x + this.player.width > this.x - 5 &&
+    this.x - 5 + this.width > this.player.x &&
+    this.y - 15 + this.height > this.player.y
   ) {
     this.player.img = this.player.img3;
     clearInterval(this.game.interval);
-
     this.player.draw();
+    this.game.music.pause();  
   }
 };
 

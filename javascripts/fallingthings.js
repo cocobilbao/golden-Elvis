@@ -8,7 +8,7 @@ function Record(game) {
   this.width = 80;
   this.height = 80;
 
-  this.vy = Math.random() * (0.35 - 0.25) + 0.25;
+  this.vy = this.vy;
 
   this.img = new Image();
   this.img.src = "images/disco.png";
@@ -23,7 +23,8 @@ Record.prototype.move = function() {
     this.y = -80;
     this.x = Math.floor(Math.random() * 900);
   }
-
+  console.log(this.y)
+  this.vy = Math.random() * (this.game.score.score > 10 ? 0.95 : this.game.score.score > 5 ? 0.65 : 0.35 - 0.25) + 0.25;
   this.y += this.vy;
 };
 
@@ -36,6 +37,7 @@ Record.prototype.collision = function() {
     this.game.score.score++;
     this.y = -80;
     this.x = Math.floor(Math.random() * 900);
+    this.game.music.hit();
   }
 };
 
@@ -44,6 +46,7 @@ function Cake(game) {
   this.canvas = this.game.canvas;
   this.ctx = this.canvas.getContext("2d");
   this.player = this.game.player;
+  this.score = this.game
   this.x = Math.floor(Math.random() * (900 - 750)) + 750;
   this.y = -80;
   this.width = 60;

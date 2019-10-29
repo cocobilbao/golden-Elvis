@@ -25,17 +25,21 @@
     this.ctx = this.canvas.getContext("2d");
 
     this.sound = new Audio("audio/Elvis Presley - Burning Love.mp3");
-    
+    this.soundOfDeath = new Audio("audio/vinyl-rewind.wav");
+    this.soundOfSuccess = new Audio("audio/success.wav");    
   }
 
   Music.prototype.play = function() {
    this.sound.play();
-   this.sound.loop = true;
-       
+   this.sound.loop = true;       
   };
   Music.prototype.pause = function() {
     this.sound.pause();
-    
-        
+    this.soundOfDeath.play();         
    };
+
+   Music.prototype.hit = function() { 
+    this.soundOfSuccess.play();      
+   };
+
 

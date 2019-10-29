@@ -27,6 +27,7 @@ body button {
   position: absolute;
   bottom: 35%;
   left: 5%;
+  outline: none;
 }
 
 .controls{
